@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample.listscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.navigationadvancedsample.R
+import com.example.android.navigationadvancedsample.formscreen.LOG_APP_NAME
 
 /**
  * Shows a static leaderboard with multiple users.
@@ -35,6 +37,7 @@ class Leaderboard : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onCreateView: ")
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_leaderboard, container, false)
 
@@ -52,6 +55,35 @@ class Leaderboard : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onStop: ")
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onDestroyView: ")
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onDestroy: ")
+        super.onDestroy()
+    }
+
+    override fun onDetach() {
+        Log.d(" :$LOG_APP_NAME: ", "Leaderboard: :onDetach: ")
+        super.onDetach()
+    }
 }
 
 class MyAdapter(private val myDataset: Array<String>) :

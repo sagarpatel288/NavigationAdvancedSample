@@ -17,11 +17,13 @@
 package com.example.android.navigationadvancedsample.homescreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.android.navigationadvancedsample.R
+import com.example.android.navigationadvancedsample.formscreen.LOG_APP_NAME
 
 /**
  * Shows "About"
@@ -30,7 +32,37 @@ class About : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-
+        Log.d(" :$LOG_APP_NAME: ", "About: :onCreateView: ")
         return inflater.inflate(R.layout.fragment_about, container, false)
+    }
+
+    override fun onResume() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onStop: ")
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onDestroyView: ")
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onDestroy: ")
+        super.onDestroy()
+    }
+
+    override fun onDetach() {
+        Log.d(" :$LOG_APP_NAME: ", "About: :onDetach: ")
+        super.onDetach()
     }
 }

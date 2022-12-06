@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample.formscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +26,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.android.navigationadvancedsample.R
 
-
+const val LOG_APP_NAME = " :NavDemo: "
 /**
  * Shows a register form to showcase UI state persistence. It has a button that goes to [Registered]
  */
@@ -33,6 +34,7 @@ class Register : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onCreateView: ")
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
@@ -40,5 +42,35 @@ class Register : Fragment() {
             findNavController().navigate(R.id.action_register_to_registered)
         }
         return view
+    }
+
+    override fun onResume() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onStop: ")
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onDestroyView: ")
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onDestroy: ")
+        super.onDestroy()
+    }
+
+    override fun onDetach() {
+        Log.d(" :$LOG_APP_NAME: ", "Register: :onDetach: ")
+        super.onDetach()
     }
 }

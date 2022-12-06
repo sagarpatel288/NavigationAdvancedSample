@@ -17,12 +17,14 @@
 package com.example.android.navigationadvancedsample.listscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.android.navigationadvancedsample.R
+import com.example.android.navigationadvancedsample.formscreen.LOG_APP_NAME
 import com.example.android.navigationadvancedsample.listscreen.MyAdapter.Companion.USERNAME_KEY
 
 
@@ -34,11 +36,41 @@ class UserProfile : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onCreateView: ")
         val view = inflater.inflate(R.layout.fragment_user_profile, container, false)
 
         val name = arguments?.getString(USERNAME_KEY) ?: "Ali Connors"
         view.findViewById<TextView>(R.id.profile_user_name).text = name
         return view
+    }
+
+    override fun onResume() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onStop: ")
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onDestroyView: ")
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onDestroy: ")
+        super.onDestroy()
+    }
+
+    override fun onDetach() {
+        Log.d(" :$LOG_APP_NAME: ", "UserProfile: :onDetach: ")
+        super.onDetach()
     }
 }

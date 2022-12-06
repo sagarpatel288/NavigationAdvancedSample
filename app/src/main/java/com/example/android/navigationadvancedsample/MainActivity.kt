@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -24,6 +25,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.android.navigationadvancedsample.formscreen.LOG_APP_NAME
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(" :$LOG_APP_NAME: ", "MainActivity: :onCreate: ")
         setContentView(R.layout.activity_main)
 
         val navHostFragment = supportFragmentManager.findFragmentById(
@@ -52,6 +55,26 @@ class MainActivity : AppCompatActivity() {
             setOf(R.id.titleScreen, R.id.leaderboard,  R.id.register)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun onResume() {
+        Log.d(" :$LOG_APP_NAME: ", "MainActivity: :onResume: ")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        Log.d(" :$LOG_APP_NAME: ", "MainActivity: :onPause: ")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.d(" :$LOG_APP_NAME: ", "MainActivity: :onStop: ")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.d(" :$LOG_APP_NAME: ", "MainActivity: :onDestroy: ")
+        super.onDestroy()
     }
 
     override fun onSupportNavigateUp(): Boolean {
